@@ -1,1 +1,0 @@
-node generate_content.js
