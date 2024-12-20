@@ -1,0 +1,221 @@
+* {
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+body {
+	/* The code below has been copied from https://fonts.google.com/specimen/Sen > Get Font > Get embed code  */
+	font-family: "Sen", serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-style: normal;
+}
+
+:root{
+	--logo-red: #A32638;
+	--logo-blue: #002B7F;
+	--logo-green: #006854;
+	--logo-yellow: #FFC61E;
+	--sky-blue: #CEDEFF;
+	--pink: #D572AD;  
+	--button-red: #FF7E91;  
+	--button-green: #7CE7A8;
+	--column-green: #C2E7D1;
+	--button-blue: #85AEFF;
+	--hot-pink: #FF7E91;
+	--faded-yellow: #FFF3B2;
+	--h1-size: 4vw;
+}
+
+main-content-boxes {
+	display:flex;
+	width:95%;
+	margin:auto;
+	flex-direction: column; 
+}
+
+main-content-box {
+	margin-top:4%;
+	margin-bottom:4%;
+}
+
+h1 {
+	font-size: var(--h1-size);
+	text-align:center;
+	min-width:60%;
+	padding:1vw;
+}
+
+h1 > span {
+	border-radius: 1vw;
+	background-color: var(--button-green);
+	padding:.2vw;
+	padding-left:.5vw;
+	padding-right:.5vw;
+}
+
+banner-header{
+    background-image: url('/global/images/sky_and_leaves.webp');
+    background-position: bottom;
+    background-size: auto 100%;
+    display:block;
+    width:100%;
+    
+}
+
+banner-header h1{
+    background-color: transparent;
+    padding:100px;
+}
+
+h2 {
+	font-size: calc(var(--h1-size) * 0.61803398876);
+	text-align:center;
+	min-width:60;
+	padding:1vw;
+}
+
+h2 > span {
+	border-radius: 1vw;
+	background-color: var(--logo-yellow);
+	padding:.2vw;
+	padding-left:.5vw;
+	padding-right:.5vw;
+}
+
+h3 {
+	text-align:center;
+	font-size:180%;
+}
+
+h4 {
+	font-weight: 900;
+}
+
+.read_more {
+    font-size:200%;
+    margin-left:10%;
+    margin-right:10%;
+    border: 2px solid var(--button-red);
+    background-color: var(--pink);
+	text-align:center;
+}
+
+vertical-splits {
+    display:flex;
+    justify-content: space-evenly;
+}
+
+vertical-split {
+    flex-grow: 1;
+	flex-basis: auto;
+}
+
+.columns{
+	display:flex;
+    justify-content: space-evenly;
+}
+
+data-column{
+	flex-grow: 1;
+	flex-basis: auto;
+}
+
+.padding {
+	padding:2.5%;
+}
+
+.list-spacing > li {
+	padding-top:8px;
+	padding-bottom:8px;
+}
+
+.big_text {
+	font-size:125%;
+}
+
+b {
+	font-weight: 900;
+}
+
+.padding_children > * {
+    margin-top:14px;
+    margin-bottom:14px;
+}
+
+time {
+	font-weight: 900;
+	width:120px;
+	display:inline-block;
+	float:left;
+}
+
+description {
+	display:inline-block;
+	max-width:75%;
+}
+
+time-lines {
+	display:block;
+	margin-top:8px;
+	margin-bottom:8px;
+}
+
+.red {
+	color:rgb(255,200,200);
+	border-bottom: 2px solid rgb(255,200,200);
+	border-top: 2px solid transparent;
+	padding-top:calc(2.5% - 2px) !important;
+}
+
+@media only screen and (max-width: 760px) {
+	:root{
+		--h1-size: 8vw;
+	}
+
+	h3 {
+		font-size: calc(calc(var(--h1-size) * 0.61803398876) * 0.61803398876);
+	}
+
+	/* For 'Børnehaven' and 'Fritidshjem' */
+	#food_plan {
+        flex-direction: column;
+    }
+    #plan, #food {
+        margin:2.5vw;
+		flex-grow:0;
+		flex-basis: content;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+	:root{
+		--h1-size: 9vw;
+	}
+
+	h1{
+		padding-left:0 !important;
+		padding-right:0 !important;
+	}
+
+	h3 {
+		font-size: calc(calc(var(--h1-size) * .8));
+	}
+
+	nav {
+		flex-wrap: wrap;
+	}
+
+	nav > * {
+        flex-grow: 0;
+		padding-top:8px;
+		padding-bottom:8px;
+	}
+
+	custom-button {
+		padding-top:20% !important;
+	}
+}

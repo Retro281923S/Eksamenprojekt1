@@ -1,0 +1,59 @@
+banner-header{
+    background-image: url('/global/images/Skyerbaggrund.webp');
+}
+
+#plan {
+    background-color: var(--sky-blue);
+}
+
+#food {
+    background-color: var(--hot-pink);
+}
+
+#stuff_to_remember {
+    background-color: var(--faded-yellow);
+}
+
+.remember_image {
+    background-image: url('/global/images/girls_from_back_walking.jpg');
+    min-width:35%;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.img_children_left {
+    min-width:20%;
+    background-image: url('/global/images/spiderman.jpg');
+    background-size: auto auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.img_children_right {
+    min-width:20%;
+    background-image: url('/global/images/poneytail_pull.jpg');
+    background-position: center;
+    background-size: auto auto;
+    background-repeat: no-repeat;
+}
+
+#traditions {
+    background-color: var(--column-green);
+}
+
+#taxes {
+    background-color: var(--sky-blue);
+}
+
+.img_swing {
+    min-width:32%;
+    background-image: url('/global/images/klodsmajor.jpg');
+    background-position: center;
+    background-size: auto auto;
+    background-repeat: no-repeat;
+}
+
+.taxes_style h3 {
+    text-align: left;
+}

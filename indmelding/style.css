@@ -1,0 +1,20 @@
+#boern{
+    background-color: var(--hot-pink);
+    display:block;
+    padding:2.5%;
+}
+
+#fritid{
+    background-color: var(--column-green);
+    padding:2.5%;
+}
+
+@media only screen and (max-width: 760px) {
+    main-content-box {
+        flex-direction: column;
+    }
+    #boern, #fritid {
+        max-width:100% !important;
+        margin:2.5vw;
+    }
+}
