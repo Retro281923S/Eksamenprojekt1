@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="da">
+<head><title>Pædagogiske prioriteringer og metoder</title>
+	<style>.file-paedagogiske_prioriteringer_og_metoder-index-hide { display:none; }</style>
+	<style>.file-paedagogiske_prioriteringer_og_metoder-index-display { display:block; }</style>
+    <meta name="robots" content="noindex">
+    <!-- Meta tags below are generated from VS Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The embed bellow are generated from: https://fonts.google.com/specimen/Sen -->
+    <link rel="icon" href="/global/images/katholt_logo_k_only.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
+
+    <!-- 
+    Denne side er udarbejdet af Mathilde Oppegaard Jensen, 
+                                David Samuel Hjertmann Christiansen &
+                                Ali Moussa
+
+    Kilder:
+    - Til design af strukturen (flexbokse og grids) er følgende kilder brugt:
+    - Flexbokse: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+    - Grids: https://css-tricks.com/snippets/css/complete-guide-grid/
+    - Når der har skulle bruges information om en specifik css attribut eller html tag:
+    - HTML: https://developer.mozilla.org/en-US/docs/Web/HTML
+    - CSS: https://developer.mozilla.org/en-US/docs/Web/CSS
+    - HTML & CSS: https://www.w3schools.com/
+    -->
+
+	<style>
+/*** header.css is included internal in the file to prevent jitter in the nav bar ***/ 
+
+/*******************************************
+* TOP
+********************************************/
+#top {
+    display:flex;
+    width:100%;
+    padding:.5vw;
+    background-color:#84AEFF;
+}
+
+/* LOGO */
+#top > .logo {
+    max-width:20%;
+}
+#top > .logo img {
+    width:20vw;
+    height:5vw;
+}
+#top > .logo, #top_buttons {
+    flex-grow:1;
+}
+
+/* NAVIGATION */
+nav *[data-active], sub-nav *[data-active]{
+    border-bottom: 4px solid rgb(255,200,200);
+    padding-top:    4px solid transparent; /* To ensure text stay in center */
+    color:rgb(255,200,200);
+}
+sub-sub-nav *[data-active] {
+    color:rgb(255,200,200);
+}
+
+nav a {
+    border: 1px solid black;
+    box-shadow: 0 2px 20px -5px rgba(0, 0, 0, .7);
+}
+
+nav, sub-nav {
+    /* for parent flexbox */
+    flex-grow:3;
+
+    /* for child flexboxes */
+    display:flex;
+    justify-content: space-around;
+}
+
+nav > *, sub-nav > * {
+    margin: 4px 2vw 4px 2vw; /* top, right, bottom & left */
+    background-color:gray;
+    width:100%;
+    text-align: center;
+
+    /* Children */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav > *, sub-nav > * {
+    margin: 4px 2vw 4px 2vw; /* top, right, bottom & left */
+    background-color:rgba(0,0,0,.03);
+    width:100%;
+    text-align: center;
+}
+
+nav * {
+    word-break: break-all;
+}
+
+nav a:active, #top_buttons a:active {
+    color:rgb(255,170,170);
+}
+
+/* BUTTONS RIGHT (LOGIN, SIGN UP) */
+#top_buttons custom-button {
+    display:block;
+    background-color: rgba(0,0,0,.03);
+    text-align: center;
+    width:100%;
+    height:45%;
+    margin:1.225%;
+    padding-top:2.5%;
+    pointer-events: none;
+    box-shadow: 0 2px 10px -5px rgba(0, 0, 0, .7);
+    outline: 1px solid black;
+}
+
+/* LOCATION BOX */
+sub-nav {
+    display:block;
+    width:100%;
+    padding:10px;
+    background-color: gold;
+}
+
+location-box {
+    padding-left:20px;
+}
+
+location-box > a {
+    text-decoration: underline;
+}
+
+location-box > a:last-child {
+    text-decoration: none;
+}
+
+sub-sub-nav > *{
+    padding:8px;
+}
+
+@media only screen and (max-width: 600px) {
+    #top > .logo img {
+        color:red;
+        /* transform: rotate(-90deg); */
+        margin:auto;
+    }
+
+    #logo_rotated {
+        display: block !important;
+        height:95% !important;
+        max-width:10vw !important;
+        margin:auto !important;
+    }
+    #logo_normal {
+        display: none !important;
+    }
+
+    #top > .logo a {
+        width:100%;
+        height:100%;
+        display:block;
+    }
+}
+</style>
+	<link rel='stylesheet' href="/global/style.css">
+	<link rel='stylesheet' href="/global/footer.css">
+</head>
+
+<div id="top">
+    <div class="logo">
+        <a data-nav-id="forside" href="/"><img id="logo_normal" src="/global/images/katholt_logo.svg" alt="Katholt"><img id="logo_rotated" style="display:none" src="/global/images/katholt_logo_rotated.svg" alt="Katholt"></a>
+    </div>
+    <nav>
+        <a data-nav-id="katholt" data-active href="/katholt/"><vertical-center>Om Katholt</vertical-center></a>
+        <a data-nav-id="boernehave" href="/boernehave/"><vertical-center>Børnehave</vertical-center></a>
+        <a data-nav-id="fritidshjem" href="/fritidshjem/"><vertical-center>Fritidshjem</vertical-center></a>
+    </nav>
+    <div id="top_buttons">
+        <a href="#"><custom-button type="button">Log på intra</custom-button></a>
+        <a href="/indmelding/"><custom-button type="button" id="signup_btn">Indmelding</custom-button></a>
+    </div>
+</div>
+<div style="display:none;">
+    <sub-nav class="file-contents-index-hide"><a href='/katholt/besoeg_og_aabningstider'><vertical-center>Besøg og abningstider</vertical-center></a><a href='/katholt/den_styrkede_paedagogiske_laereplan' data-active><vertical-center>Den styrkede pædagogiske læreplan</vertical-center></a><a href='/katholt/foraeldrebestyrelse'><vertical-center>Forældrebestyrelse</vertical-center></a><a href='/katholt/foraeldresamarbejde'><vertical-center>Forældresamarbejde</vertical-center></a><a href='/katholt/hvem_er_vi'><vertical-center>Hvem er vi</vertical-center></a><a href='/katholt/info_fra_Kommunen'><vertical-center>Info fra Kommunen</vertical-center></a><a href='/katholt/kontakt'><vertical-center>Kontakt</vertical-center></a><a href='/katholt/kostpolitik_for_boernehaven_Katholt'><vertical-center>Kostpolitik for børnehaven Katholt</vertical-center></a><a href='/katholt/studerende'><vertical-center>Studerende</vertical-center></a><a href='/katholt/traditioner_i_boernehaven'><vertical-center>Traditioner i børnehaven</vertical-center></a><a href='/katholt/traditioner_i_fritidshjem'><vertical-center>Traditioner i fritidshjem</vertical-center></a><a href='/katholt/veardigrundlag'><vertical-center>Veardigrundlag</vertical-center></a></sub-nav>
+    Debug Sub sub menu:
+    <div style="padding:16px;">
+        <sub-sub-nav class="file-contents-index-hide"><a href='/katholt/den_styrkede_paedagogiske_laereplan/barnets_alsidige_personlighedsudvikling'><vertical-center>Barnets alsidige personlighedsudvikling</vertical-center></a><a href='/katholt/den_styrkede_paedagogiske_laereplan/boernemiljoevurdering'><vertical-center>Børnemiljoevurdering</vertical-center></a><a href='/katholt/den_styrkede_paedagogiske_laereplan/krop_og_bevaegelse'><vertical-center>Krop og bevægelse</vertical-center></a><a href='/katholt/den_styrkede_paedagogiske_laereplan/kulturelle_udtryksformer_og_vaerdier'><vertical-center>Kulturelle udtryksformer og værdier</vertical-center></a><a href='/katholt/den_styrkede_paedagogiske_laereplan/natur_og_naturfaenomener'><vertical-center>Natur og naturfænomener</vertical-center></a><a href='/katholt/den_styrkede_paedagogiske_laereplan/paedagogiske_prioriteringer_og_metoder' data-active><vertical-center>Pædagogiske prioriteringer og metoder</vertical-center></a><a href='/katholt/den_styrkede_paedagogiske_laereplan/sociale_kompetencer'><vertical-center>Sociale kompetencer</vertical-center></a><a href='/katholt/den_styrkede_paedagogiske_laereplan/sprog'><vertical-center>Sprog</vertical-center></a></sub-sub-nav><br>
+    </div>
+    <location-box><a href='/'>Forside</a> / <a href='/katholt/'>Katholt</a> / <a href='/katholt/den_styrkede_paedagogiske_laereplan/'>Den styrkede pædagogiske læreplan</a> / <a href='/katholt/den_styrkede_paedagogiske_laereplan/paedagogiske_prioriteringer_og_metoder/'>Pædagogiske prioriteringer og metoder</a></location-box><br>
+</div>
+<main><div id="content" role="main">
+
+    <!-- vvv INDHOLD START vvv -->
+    <h1>Pædagogiske prioriteringer og metoder</h1>
+    <p><strong>Trygheden</strong>&nbsp;- som grobund for trivsel og udvikling skal tryghed skabes og vedligeholdes i
+        hverdagen.&nbsp;Barnet skal mærke, at her er plads til mig - her må jeg være - her må jeg selv prøve og gøre
+        erfaringer - men hvis jeg ikke kan, får jeg hjælp til at lære det - de voksne er nogen, der kan lide at være
+        sammen med mig, og som jeg kan have tillid til.</p>
+    <p>Det er rart at mærke, at man er ønsket - at få knus - "det er vores institution".<br><br><img
+            src="pics/518_christianiecykel.jpg" alt="Christianiecykel" width="100%"></p>
+    <p>&nbsp;</p>
+    <p><strong>Forskellighed</strong>&nbsp;- det er vigtigt, at børnene bliver set og hørt som forskellige børn på
+        forskellige udviklingstrin og med forskellige behov. Vi behandler ikke alle børn ens - for netop at behandle dem
+        retfærdigt. Eks. det er ikke snyd, hvis et barn får lov selv at være på værkstedet, mens der til et andet barn
+        bliver sagt nej - eller hvis et barn kommer med på tur, og et andet ikke gør.</p>
+    <p>&nbsp;</p>
+    <p>De voksen styrede aktiviteter er tilbud, og vi respekterer oftest et nej til at deltage. I nogle tilfælde er der
+        behov for at analysere nej'et. Måske er der brug for hjælp til videre udvikling. Eks. " et barn vil ikke være
+        med til bevægelseslege. Måske betyder det - "Jeg ved ikke hvad der skal ske - jeg tør ikke - jeg kan ikke finde
+        ud af det". I denne situation vil vi evt. bede barnet gå med og kigge på. Det kan være begyndelsen til at finde
+        den tryghed, der er forudsætningen for at turde være med.</p>
+    <p>&nbsp;</p>
+    <p><strong>Selvværd</strong>&nbsp;- opbygges ved, at man behandles med respekt. Valgmulighed og selvbestemmelse er
+        med til at give børn selvværdsfølelse. Det de vælger bliver respekteret = jeg er god nok! Det betyder ikke, at
+        ønskerne altid opfyldes. Det betyder heller ikke, at valget altid accepteres. Men vi snakker med børnene, lytter
+        til dem, argumenterer og giver en forklaring.</p>
+    <p>&nbsp;</p>
+    <p><strong>Sociale kompetencer</strong>&nbsp;- vi ønsker, at børnene udvikler social adfærd, som indebærer, at de -
+        får forståelse for hinandens forskellighed og forskellig kunnen - værdsætter fællesskabet og samspillet med
+        andre - kan hjælpe hinanden - kan samarbejde og lytte til hinanden - kan tilsidesætte egne behov, vente.</p>
+    <p>&nbsp;</p>
+    <p>Livet i Katholt i samspil med børn og voksne stimulerer den sociale udvikling. Eksempelvis skal børnene hjælpe
+        hinanden med oprydning - vente på det bliver deres tur -sende videre når maden sendes rundt - lytte til hinanden
+        ved bordet eller i rundkreds/samlingsstunder - hente en voksen, når en kammerat har brug for hjælp - lade andre
+        være med til at bestemme i legen - opleve en anden få ros for en tegning, men selv få ros for at finde på en
+        leg.</p>
+    <p>&nbsp;</p>
+    <p><br><strong>Legen i fokus</strong>: Legen er en slags ustruktureret øvelse i at leve, den rummer derfor alle<br
+            class="Apple-interchange-newline">følelser; glæde, sorg, raseri, vrede, jalousi, kærlighed, had osv. Legen
+        kan også sætte virkeligheden ud af kraft. I leg kan alt lade sig gøre, kun&nbsp;fantasien sætter grænser, men
+        leg kan også indeholde regler og aftaler. Vi voksne skal derfor omgås legen med fornøden respekt, så børnene kan
+        få legens forum til at udvikle sig, ved at vi skaber tid, plads og rum til leg. Vi skal opmuntre hellere end
+        nedmuntre legen, gå på besøg i legen og evt. lege med og ikke unødigt afbryde legen.<img class="imageright"
+            src="pics/legen-i-fokus.jpg" alt="Legen i fokus" width="230"><br><br>&nbsp;Vi voksne skal være klar på
+        legens sidelinie, dvs. være til rådighed, når børnene har behov for det.</p>
+    <p>Børns leg er ikke tidsfordriv, men en seriøs og meget vigtig mulighed for at bearbejde oplevelser. Børnenes leg
+        er med til at udvikle fantasien og kreativitet - en vigtig forudsætning for at gøre erfaringer, finde løsninger
+        og lære senere i livet.</p>
+    <p>&nbsp;</p>
+    <p><strong>Udfordringer</strong>&nbsp;- vi vil gerne give børnene masser af udfordringer - give dem mulighed for at
+        eksperimentere og gøre erfaringer. Derfor tilstræber vi at de fysiske rammer er indrettet dertil, at der er et
+        bredt udvalg af tilbud om aktiviteter og forskellige oplevelser.<br>Livet på Katholt er fuld af udfordringer.
+        For de mindste børn er der en udfordring i selv at tage tøj på, sende maden rundt, vente på tur, kravle op på
+        bordet - og ned igen, vaske hænder uden at blive våd, stå op og tisse og ramme toilettet.</p>
+    <p>&nbsp;</p>
+    <p><em>"Hver gang du gør noget for dit barn, som det kan eller er lige ved at kunne, tager du en udfordring og en
+            udviklingsmulighed fra det". ( Birk Christensen)</em></p>
+    <p>&nbsp;</p>
+    <p><strong>Fokuspunkter for den kommende periode:</strong>&nbsp;</p>
+    <ul class="unIndentedList">
+        <li>Helhedsforståelse for det enkelte barn</li>
+        <li>Social læring/fællesskabet</li>
+        <li>Evaluere det enkelte barn</li>
+        <li>BH TRAS</li>
+        <li>BH Læreplaner</li>
+        <li>FH Skabe tryghed, tillid og nærvær</li>
+        <li>FH At børnene udvikler de individuelle og sociale kompetencer</li>
+        <li>FH Kommunikation</li>
+    </ul>
+    <p>&nbsp;</p>
+    <!-- ^^^ INDHOLD SLUT ^^^ -->
+
+    <p>&nbsp;</p>
+</div></main>
+<footer>
+    <div>
+        <flex-column>
+            <a href="/"><img class="footerlogo" src="/global/images/katholt_logo.svg" alt="Katholt logo"></a>
+            <a href="/">Forside</a>
+            <a href="/katholt/">Om Katholt</a>
+            <a href="/boernehave/">Børnehave</a>
+            <a href="/fritidshjem/">Fritidshjem</a>
+            <a href="/indmelding/">Indmelding</a>
+        </flex-column>
+
+        <flex-column class="katholt_footer">
+            <h2>Katholt Børnehave</h2>
+            <p>Børnegården Katholt</p>
+            <p>Adresse: Amagervej 140-142</p>
+            <p>6900 Skjern</p>
+            <p>Telefon: 97 35 17 02</p>
+            <p>Åbningstider: børnehave: </p>
+            <p>mandag-torsdag fra kl. 6.30-16.30</p>
+            <p>fredag 6.30-16.00</p>
+            <p>Åbningstider i fritidshjem: mandag-torsdag fra 6.30 - 7.45 og 12.50 - 16.30</p>
+            <p>Fredag 6.30 - 7.45 og 12.50 - 16.00</p>
+        </flex-column>
+
+        <flex-column class="katholt_footer">
+            <h2>Katholt Fritidshjem</h2>   
+            <p>Børnegården Katholt</p>
+            <p>Adresse: Amagervej 140-142</p>
+            <p>6900 Skjern</p>
+            <p>Åbningstider</p>
+            <p>mandag-torsdag fra kl 6.30-7.45 og 12.50 - 16.30</p>
+            <p>Fredag 6.30 - 7.45 og 12.50 - 16.00</p>
+        </flex-column>
+
+        <flex-column>
+            <h2>Eksterne links for forældre</h2>
+            <a href="https://www.bedoemmelse.dk/" target="_blank">Bedømmelser af institutioner og meget andet</a>
+            <a href="https://www.sjovforborn.dk/" target="_blank">Side med udflugtsideer</a>
+            <a href="https://www.barneguiden.dk/" target="_blank">Børneguiden</a>
+            <a href="https://migimidten.dk/" target="_blank">Mine forældre skal skilles</a>
+            <a href="https://bornsvilkar.dk/" target="_blank">Børns vilkår</a>
+        </flex-column>
+    </div>
+    <div id="education_only">Dette site er kun til undervisningsformål</div>
+</footer>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="da">
+<head><title>Katholt</title>
+	<style>.file-katholt-index-hide { display:none; }</style>
+	<style>.file-katholt-index-display { display:block; }</style>
+    <meta name="robots" content="noindex">
+    <!-- Meta tags below are generated from VS Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The embed bellow are generated from: https://fonts.google.com/specimen/Sen -->
+    <link rel="icon" href="/global/images/katholt_logo_k_only.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
+
+    <!-- 
+    Denne side er udarbejdet af Mathilde Oppegaard Jensen, 
+                                David Samuel Hjertmann Christiansen &
+                                Ali Moussa
+
+    Kilder:
+    - Til design af strukturen (flexbokse og grids) er følgende kilder brugt:
+    - Flexbokse: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+    - Grids: https://css-tricks.com/snippets/css/complete-guide-grid/
+    - Når der har skulle bruges information om en specifik css attribut eller html tag:
+    - HTML: https://developer.mozilla.org/en-US/docs/Web/HTML
+    - CSS: https://developer.mozilla.org/en-US/docs/Web/CSS
+    - HTML & CSS: https://www.w3schools.com/
+    -->
+
+	<style>
+/*** header.css is included internal in the file to prevent jitter in the nav bar ***/ 
+
+/*******************************************
+* TOP
+********************************************/
+#top {
+    display:flex;
+    width:100%;
+    padding:.5vw;
+    background-color:#84AEFF;
+}
+
+/* LOGO */
+#top > .logo {
+    max-width:20%;
+}
+#top > .logo img {
+    width:20vw;
+    height:5vw;
+}
+#top > .logo, #top_buttons {
+    flex-grow:1;
+}
+
+/* NAVIGATION */
+nav *[data-active], sub-nav *[data-active]{
+    border-bottom: 4px solid rgb(255,200,200);
+    padding-top:    4px solid transparent; /* To ensure text stay in center */
+    color:rgb(255,200,200);
+}
+sub-sub-nav *[data-active] {
+    color:rgb(255,200,200);
+}
+
+nav a {
+    border: 1px solid black;
+    box-shadow: 0 2px 20px -5px rgba(0, 0, 0, .7);
+}
+
+nav, sub-nav {
+    /* for parent flexbox */
+    flex-grow:3;
+
+    /* for child flexboxes */
+    display:flex;
+    justify-content: space-around;
+}
+
+nav > *, sub-nav > * {
+    margin: 4px 2vw 4px 2vw; /* top, right, bottom & left */
+    background-color:gray;
+    width:100%;
+    text-align: center;
+
+    /* Children */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav > *, sub-nav > * {
+    margin: 4px 2vw 4px 2vw; /* top, right, bottom & left */
+    background-color:rgba(0,0,0,.03);
+    width:100%;
+    text-align: center;
+}
+
+nav * {
+    word-break: break-all;
+}
+
+nav a:active, #top_buttons a:active {
+    color:rgb(255,170,170);
+}
+
+/* BUTTONS RIGHT (LOGIN, SIGN UP) */
+#top_buttons custom-button {
+    display:block;
+    background-color: rgba(0,0,0,.03);
+    text-align: center;
+    width:100%;
+    height:45%;
+    margin:1.225%;
+    padding-top:2.5%;
+    pointer-events: none;
+    box-shadow: 0 2px 10px -5px rgba(0, 0, 0, .7);
+    outline: 1px solid black;
+}
+
+/* LOCATION BOX */
+sub-nav {
+    display:block;
+    width:100%;
+    padding:10px;
+    background-color: gold;
+}
+
+location-box {
+    padding-left:20px;
+}
+
+location-box > a {
+    text-decoration: underline;
+}
+
+location-box > a:last-child {
+    text-decoration: none;
+}
+
+sub-sub-nav > *{
+    padding:8px;
+}
+
+@media only screen and (max-width: 600px) {
+    #top > .logo img {
+        color:red;
+        /* transform: rotate(-90deg); */
+        margin:auto;
+    }
+
+    #logo_rotated {
+        display: block !important;
+        height:95% !important;
+        max-width:10vw !important;
+        margin:auto !important;
+    }
+    #logo_normal {
+        display: none !important;
+    }
+
+    #top > .logo a {
+        width:100%;
+        height:100%;
+        display:block;
+    }
+}
+</style>
+	<link rel='stylesheet' href="/global/style.css">
+	<link rel='stylesheet' href="/katholt/style.css">
+	<link rel='stylesheet' href="/global/footer.css">
+</head>
+
+<div id="top">
+    <div class="logo">
+        <a data-nav-id="forside" href="/"><img id="logo_normal" src="/global/images/katholt_logo.svg" alt="Katholt"><img id="logo_rotated" style="display:none" src="/global/images/katholt_logo_rotated.svg" alt="Katholt"></a>
+    </div>
+    <nav>
+        <a data-nav-id="katholt" data-active href="/katholt/"><vertical-center>Om Katholt</vertical-center></a>
+        <a data-nav-id="boernehave" href="/boernehave/"><vertical-center>Børnehave</vertical-center></a>
+        <a data-nav-id="fritidshjem" href="/fritidshjem/"><vertical-center>Fritidshjem</vertical-center></a>
+    </nav>
+    <div id="top_buttons">
+        <a href="#"><custom-button type="button">Log på intra</custom-button></a>
+        <a href="/indmelding/"><custom-button type="button" id="signup_btn">Indmelding</custom-button></a>
+    </div>
+</div>
+<div style="display:none;">
+    <sub-nav class="file-contents-index-hide"><a href='/katholt/besoeg_og_aabningstider'><vertical-center>Besøg og abningstider</vertical-center></a><a href='/katholt/den_styrkede_paedagogiske_laereplan'><vertical-center>Den styrkede pædagogiske læreplan</vertical-center></a><a href='/katholt/foraeldrebestyrelse'><vertical-center>Forældrebestyrelse</vertical-center></a><a href='/katholt/foraeldresamarbejde'><vertical-center>Forældresamarbejde</vertical-center></a><a href='/katholt/hvem_er_vi'><vertical-center>Hvem er vi</vertical-center></a><a href='/katholt/info_fra_Kommunen'><vertical-center>Info fra Kommunen</vertical-center></a><a href='/katholt/kontakt'><vertical-center>Kontakt</vertical-center></a><a href='/katholt/kostpolitik_for_boernehaven_Katholt'><vertical-center>Kostpolitik for børnehaven Katholt</vertical-center></a><a href='/katholt/studerende'><vertical-center>Studerende</vertical-center></a><a href='/katholt/traditioner_i_boernehaven'><vertical-center>Traditioner i børnehaven</vertical-center></a><a href='/katholt/traditioner_i_fritidshjem'><vertical-center>Traditioner i fritidshjem</vertical-center></a><a href='/katholt/veardigrundlag'><vertical-center>Veardigrundlag</vertical-center></a></sub-nav>
+    Debug Sub sub menu:
+    <div style="padding:16px;">
+        <sub-sub-nav class="file-contents-index-hide"></sub-sub-nav><br>
+    </div>
+    <location-box><a href='/'>Forside</a> / <a href='/katholt/'>Katholt</a></location-box><br>
+</div>
+<main><banner-header>
+  <h1><span>Om Katholt</span></h1>
+</banner-header>
+<main-content-boxes>
+  <main-content-box class="columns" id="about_us_and_contact_flex">
+    <data-column id="about_us" class="padding">
+      <h2><span>Om os</span></h2>
+      <p id="about_us_font_size">Vi er en privatinstitution lokaliseret i Skjern, som består af en børnehave og et fritidshjem.</p><br>
+      <p>Vi fokuserer hos Børnegården Katholt på sund kost og aktiv lærring i naturen.</p>
+      <p>I børnehaven er børnene ude hver dag og oplever udelivet. I fritidhjemmet bruger vi blandt andet ler, træ-, kreativværksted, legorum, barbierum, kælder med puderum, gymnastiksalen, danserum og dyrerum til aktiviteter, og barnet kan være med til selv at vælge nogle aktiviteter.</p><br>
+      <h3>Børnehaven</h3>
+      <ul>
+        <li>Børnehaven rummer op til ca. 75 børn i alderen 2.10 år til 6 år, fordelt i 3 grupper i BLÅ - RØD - GRØN.
+        </li>
+        <li>I børnehaven skaber vi et trygt miljø, og vi mener at udvikling sker bedst i trygge rammer.</li>
+        <li>Vi styrker børnene og tror på dem, fordi at selvtillid er en vigtig faktor for den mentale udvikling.</li>
+      </ul><br>
+      <h3>Fritidshjemmet</h3>
+      <ul>
+        <li>Fritidshjemmet er normeret op til 100 børn, som vi fordeler i fire grupper.</li>
+        <li>I fritidshjemmet skaber et trygt miljø hvor der er fælles respekt for alle. </li>
+      </ul>
+    </data-column>
+    <data-column id="contact_opening" class="padding">
+      <h2><span>Kontakt og åbningstider</span></h2>
+      <kindergarten-aftercare class="columns">
+        <data-column>
+          <h3>Børnehaven</h3><br>
+          <p>Telefon: 97 35 17 02</p><br>
+          <p>Åbningstider</p>
+          <p>Mandag - torsdag fra kl.</p>
+          <p>6.30-16.30</p>
+          <p>Fredag 6.30-16.00</p>
+        </data-column>
+        <data-column id="aftercare">
+          <h3>Fritidshjemmet</h3><br>
+          <p>Telefon : 97 35 23 11</p><br>
+          <p>Åbningstider:</p>
+          <p>Mandag - torsdag fra 6.30 - 7.45 og 12.50 - 16.30</p>
+          <p>Fredag 6.30 - 7.45</p>
+          <p>og 12.50 -16.00</p>
+        </data-column>
+      </kindergarten-aftercare>
+      <div class="columns">
+        <data-column>
+          <h4>Lukketdage</h4>
+          <ul>
+            <li>1. januar</li>
+            <li>5. juni (grundlovsdag)</li>
+            <li>Juleaften</li>
+          </ul>
+        </data-column>
+        <data-column>
+          <h4>Fælles feriepasning med Naturhuset Skovlykke</h4>
+          <ul>
+            <li>Fredag efter Kr. Himmelfartsdag</li>
+            <li>Ugerne 29+30 i sommerferien</li>
+            <li>Mellem jul og nytår</li>
+          </ul>
+          (Naturhuset Skovlykke står for fælles feriepasning i lige år
+          Børnegården Katholt står for fælles feriepasning i ulige år)
+        </data-column>
+      </div>
+      <div class="columns">
+        <div style="max-width:90%;margin-top:25px">
+          <h4 style="display:inline">Telefontider:</h4><span> Bedst i tidsrummet: 6.30 – 7.45 og 12.30 – 13.30</span>
+          Børnene i fritidshjemmet får som hovedregel IKKE lov til at benytte telefonen!
+          Legeaftaler og andet planlægges hjemmefra.<br><br>
+        </div>
+      </div>
+    </data-column>
+  </main-content-box>
+  <main-content-box style="background-color: var(--faded-yellow)" class="padding">
+    <h2 style="width:35%;" id="katholt_values"><span>Vores Værdier</span></h2>
+    <div class="columns" id="values_flex">
+      <data-column style="max-width:35%;">
+        <h4>Hos Børnegården Katholt har vi fokus på traditionel og sund læring, og bruger ikke iPads eller anden teknologi med børnene.</h4>
+        <ul class="list-spacing">
+          <li>Vi mener at frisk luft er det bedste for børn.</li>
+          <li>Vi bruger meget tid udendørs i naturen.</li>
+          <li>Vi skaber et godt miljø med sjov og leg.</li>
+          <li>Vi fokuserer på sund mad, og har en sukkerfri intitution. </li>
+          <li>Vi bruger tid på at lære børnene om sundhed.</li>
+          <li>Vi er ordenlige overfor hinanden, og lærer børnene at respektere hinanden.</li>
+          <li>Vi har mange faste traditioner både i børnehaven og i fritidshjemmet.</li>
+        </ul>
+      </data-column>
+      <data-column style="max-width:55%;">
+        <grid-system>
+          <div data-value="1">
+            <h4>Vi er ordenlige!</h4>
+            <ol>
+              <li>Vi tager udgangspunkt i det enkelte barn og dets familie og ser dets ressourcer og behov ud fra det menneskelige og faglige plan.</li>
+              <li>Har indlevelse i den enkelte families situation</li>
+              <li>Vi vægter ærlighed og troværdighed højt.</li>
+              <li>Vi skaber rammerne, så barnet opnår størst mulig trivsel og gør dem klar til at begå sig i samfundet – opdrager til fællesskabet.</li>
+              <li>Vi skal være gode rollemodeller.</li>
+            </ol>
+            Vi behandler børn, forældre og kolleger med respekt.
+          </div>
+          <div id="value1">
+            
+          </div>
+          <div data-value="2">
+            <h4>Vi er nysgerrige!</h4>
+            <ol>
+              <li>er åbne, opmærksomme og omstillingsparate. Vi er up to date, med hvad der sker omkring os, og vi tilegner os den nyeste viden.</li>
+              <li>Vi tilstræber at gøre børnene til livsduelige individer.</li>
+              <li>Vi griber børnene hvor de er i deres undren, interesse og sindstilstand.</li>
+              <li>Vi videre udvikler os – reflekterer – evaluerer – justerer – handler.</li>
+              <li>Vi handler på det vi ser – og ikke på det vi tror vi ser.</li>
+            </ol>
+            Ny viden – udvikling – handling – engagement
+          </div>
+          <div id="value2">
+
+          </div>
+          <div data-value="3">
+            <h4>Vi handler!</h4>
+            <ol>
+              <li>Vi tilrettelægger en hverdag, der tilgodeser barnets behov med plads til spontanitet.</li>
+              <li>Vi sætter handling bag ordene.</li>
+              <li>Vi reflekterer og evaluerer handlinger – både succeser, vanskeligheder og fejl.</li>
+              <li>Vi agerer ud fra den viden vi har til gavn for den enkelte.</li>
+            </ol>
+            Vi forholder os til situationer som de kommer.
+          </div>
+          <div id="value3">
+
+          </div>
+        </grid-system>
+      </data-column>
+    </div>
+  </main-content-box>
+  <main-content-box class="columns" id="bes_for">
+    <data-column id="directors" class="padding">
+      <h2><span>Bestyrelsen</span></h2>
+      <div class="wrap_parent">
+        <div class="wrap">
+          <h4>Forretningsudvalg</h4>
+          Formand: Knud Hougaard Klausen 
+          Næst formand: Poul Nielsen Bestyrelsesmedlem: Berit Olesen  
+          Sekretær: Sarah Pontoppidan 
+          Leder: Ulla Larsen
+        </div>
+        <div class="wrap">
+          <h4>Børnehavens forældrebestyrelse</h4>
+          Martin T. Nielsen - far til Oskar Blå stue 
+          Brian B Kristensen - far til Frederik Grøn stue  
+          Christina K Letager - mor til Sigrid Rød stue  
+          Linette Jensen - mor til Freja Blå stue     
+
+          Personale: Gerda Bertelsen   
+        </div>
+        <div class="wrap">
+          <h4>Fritidshjemmets forældrebestyrelse</h4>
+          Phillip Poulsen - far til Maggie 2.kl. 
+          Didde Damgaard - mor til Nynne Rasmussen 3. kl.  
+          Jesper L Korsholm - far til Bertram 2.kl. og Silja 1.kl
+          Suppl.: Lisette Andersen - Victor 2. kl. 
+          Personale: Tina Pontoppidan 
+        </div>
+        <div class="wrap">
+          <h4>Har I behov for kontakt, står vi meget gerne til rådighed</h4>
+          Formand: Knud Hougaard Klausen,  Ånumvej 121, 6900 Skjern, Tlf. 20 40 30 66
+          Leder: Ulla Larsen, Oldagervænget 34, 6900 Skjern, Tlf. 20 58 97 46
+        </div>
+      </div>
+    </data-column>
+    <data-column id="parent_coop" class="padding">
+      <h2 id="f_long"><span>Forældresamarbejde</span></h2>
+      <!--<h2 id="f_short"><span>Forældre samarbejde</span></h2>-->
+      <p class="big_text">Vi vægter det gode forældresamarbejde. Et godt samarbejde betyder trivsel for både børn og voksne. I er altid velkomne til at deltage i vores aktiviteter.</p>
+      <div class="wrap_parent">
+        <div class="wrap">
+          <h4>Forretningsudvalg</h4>
+          Formand: Knud Hougaard Klausen 
+          Næst formand: Poul Nielsen Bestyrelsesmedlem: Berit Olesen  
+          Sekretær: Sarah Pontoppidan 
+          Leder: Ulla Larsen
+        </div>
+        <div class="wrap">
+          <h4>Børnehavens forældrebestyrelse</h4>
+          Martin T. Nielsen - far til Oskar Blå stue 
+          Brian B Kristensen - far til Frederik Grøn stue  
+          Christina K Letager - mor til Sigrid Rød stue  
+          Linette Jensen - mor til Freja Blå stue     
+
+          Personale: Gerda Bertelsen   
+        </div>
+        <div class="wrap">
+          <h4>Fritidshjemmets forældrebestyrelse</h4>
+          Phillip Poulsen - far til Maggie 2.kl. 
+          Didde Damgaard - mor til Nynne Rasmussen 3. kl.  
+          Jesper L Korsholm - far til Bertram 2.kl. og Silja 1.kl
+          Suppl.: Lisette Andersen - Victor 2. kl. 
+          Personale: Tina Pontoppidan 
+        </div>
+        <div class="wrap">
+          <h4>Har I behov for kontakt, står vi meget gerne til rådighed</h4>
+          Formand: Knud Hougaard Klausen,  Ånumvej 121, 6900 Skjern, Tlf. 20 40 30 66
+          Leder: Ulla Larsen, Oldagervænget 34, 6900 Skjern, Tlf. 20 58 97 46
+        </div>
+      </div>
+    </data-column>
+  </main-content-box>
+  <main-content-box>
+    <data-column id="documents" class="padding">
+      <h2><span>Dokumenter</span></h2>
+      <ul>
+        <li><a href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fwww.boernegaardenkatholt.dk%2Ffiler%2F1139vaerdier.docx&wdOrigin=BROWSELINK" target="_blank">Katholts værdier</a></li>
+        <li><a href="https://www.boernegaardenkatholt.dk/filer/den-styrkede-paedagogisk-laereplan-x.pdf" target="_blank">Pædagogisk læreplan</a></li>
+        <li><a href="https://www.boernegaardenkatholt.dk/filer/sprog---beskrivelse-2016-2017.pdf" target="_blank">Beskrivelse af sproglig kompetence</a></li>
+        <li><a href="https://www.boernegaardenkatholt.dk/filer/model---natur-naturfaenomener-2017-2018.pdf" target="_blank">Beskrivelse af natur og naturfænomener 2017-2018</a></li>
+        <li><a href="https://www.boernegaardenkatholt.dk/filer/beskrivelse---kulturelle-udtryksformer-vaerdier-2017-2018-3.pdf" target="_blank">Beskrivelse af kulturelle udtryksformer 2017-2018</a></li>
+        <li><a href="https://www.boernegaardenkatholt.dk/filer/kostpolitik---smittemodel-1ny.pdf" target="_blank">Kostpolitik</a></li>
+        <li><a href="https://www.boernegaardenkatholt.dk/filer/2747praktikbeskrivelse-skabelon-dagtilbud-paed-udd--i-viaredigeret-feb-2017.pdf" target="_blank">Praktikbeskrivelse for studerende</a></li>
+        <li><a href="https://www.boernegaardenkatholt.dk/filer/tilsynsrapport-for-anmeldt-tilsyn-2022-i-boernegaarden-katholt.pdf" target="_blank">Pædagogisk Tilsyn (2022)</a></li>
+      </ul>
+    </data-column>
+  </main-content-box>
+</main-content-boxes></main>
+<footer>
+    <div>
+        <flex-column>
+            <a href="/"><img class="footerlogo" src="/global/images/katholt_logo.svg" alt="Katholt logo"></a>
+            <a href="/">Forside</a>
+            <a href="/katholt/">Om Katholt</a>
+            <a href="/boernehave/">Børnehave</a>
+            <a href="/fritidshjem/">Fritidshjem</a>
+            <a href="/indmelding/">Indmelding</a>
+        </flex-column>
+
+        <flex-column class="katholt_footer">
+            <h2>Katholt Børnehave</h2>
+            <p>Børnegården Katholt</p>
+            <p>Adresse: Amagervej 140-142</p>
+            <p>6900 Skjern</p>
+            <p>Telefon: 97 35 17 02</p>
+            <p>Åbningstider: børnehave: </p>
+            <p>mandag-torsdag fra kl. 6.30-16.30</p>
+            <p>fredag 6.30-16.00</p>
+            <p>Åbningstider i fritidshjem: mandag-torsdag fra 6.30 - 7.45 og 12.50 - 16.30</p>
+            <p>Fredag 6.30 - 7.45 og 12.50 - 16.00</p>
+        </flex-column>
+
+        <flex-column class="katholt_footer">
+            <h2>Katholt Fritidshjem</h2>   
+            <p>Børnegården Katholt</p>
+            <p>Adresse: Amagervej 140-142</p>
+            <p>6900 Skjern</p>
+            <p>Åbningstider</p>
+            <p>mandag-torsdag fra kl 6.30-7.45 og 12.50 - 16.30</p>
+            <p>Fredag 6.30 - 7.45 og 12.50 - 16.00</p>
+        </flex-column>
+
+        <flex-column>
+            <h2>Eksterne links for forældre</h2>
+            <a href="https://www.bedoemmelse.dk/" target="_blank">Bedømmelser af institutioner og meget andet</a>
+            <a href="https://www.sjovforborn.dk/" target="_blank">Side med udflugtsideer</a>
+            <a href="https://www.barneguiden.dk/" target="_blank">Børneguiden</a>
+            <a href="https://migimidten.dk/" target="_blank">Mine forældre skal skilles</a>
+            <a href="https://bornsvilkar.dk/" target="_blank">Børns vilkår</a>
+        </flex-column>
+    </div>
+    <div id="education_only">Dette site er kun til undervisningsformål</div>
+</footer>

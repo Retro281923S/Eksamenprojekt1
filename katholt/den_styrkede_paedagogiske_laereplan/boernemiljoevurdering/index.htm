@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="da">
+<head><title>Børnemiljoevurdering</title>
+	<style>.file-boernemiljoevurdering-index-hide { display:none; }</style>
+	<style>.file-boernemiljoevurdering-index-display { display:block; }</style>
+    <meta name="robots" content="noindex">
+    <!-- Meta tags below are generated from VS Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The embed bellow are generated from: https://fonts.google.com/specimen/Sen -->
+    <link rel="icon" href="/global/images/katholt_logo_k_only.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
+
+    <!-- 
+    Denne side er udarbejdet af Mathilde Oppegaard Jensen, 
+                                David Samuel Hjertmann Christiansen &
+                                Ali Moussa
+
+    Kilder:
+    - Til design af strukturen (flexbokse og grids) er følgende kilder brugt:
+    - Flexbokse: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+    - Grids: https://css-tricks.com/snippets/css/complete-guide-grid/
+    - Når der har skulle bruges information om en specifik css attribut eller html tag:
+    - HTML: https://developer.mozilla.org/en-US/docs/Web/HTML
+    - CSS: https://developer.mozilla.org/en-US/docs/Web/CSS
+    - HTML & CSS: https://www.w3schools.com/
+    -->
+
+	<style>
+/*** header.css is included internal in the file to prevent jitter in the nav bar ***/ 
+
+/*******************************************
+* TOP
+********************************************/
+#top {
+    display:flex;
+    width:100%;
+    padding:.5vw;
+    background-color:#84AEFF;
+}
+
+/* LOGO */
+#top > .logo {
+    max-width:20%;
+}
+#top > .logo img {
+    width:20vw;
+    height:5vw;
+}
+#top > .logo, #top_buttons {
+    flex-grow:1;
+}
+
+/* NAVIGATION */
+nav *[data-active], sub-nav *[data-active]{
+    border-bottom: 4px solid rgb(255,200,200);
+    padding-top:    4px solid transparent; /* To ensure text stay in center */
+    color:rgb(255,200,200);
+}
+sub-sub-nav *[data-active] {
+    color:rgb(255,200,200);
+}
+
+nav a {
+    border: 1px solid black;
+    box-shadow: 0 2px 20px -5px rgba(0, 0, 0, .7);
+}
+
+nav, sub-nav {
+    /* for parent flexbox */
+    flex-grow:3;
+
+    /* for child flexboxes */
+    display:flex;
+    justify-content: space-around;
+}
+
+nav > *, sub-nav > * {
+    margin: 4px 2vw 4px 2vw; /* top, right, bottom & left */
+    background-color:gray;
+    width:100%;
+    text-align: center;
+
+    /* Children */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav > *, sub-nav > * {
+    margin: 4px 2vw 4px 2vw; /* top, right, bottom & left */
+    background-color:rgba(0,0,0,.03);
+    width:100%;
+    text-align: center;
+}
+
+nav * {
+    word-break: break-all;
+}
+
+nav a:active, #top_buttons a:active {
+    color:rgb(255,170,170);
+}
+
+/* BUTTONS RIGHT (LOGIN, SIGN UP) */
+#top_buttons custom-button {
+    display:block;
+    background-color: rgba(0,0,0,.03);
+    text-align: center;
+    width:100%;
+    height:45%;
+    margin:1.225%;
+    padding-top:2.5%;
+    pointer-events: none;
+    box-shadow: 0 2px 10px -5px rgba(0, 0, 0, .7);
+    outline: 1px solid black;
+}
+
+/* LOCATION BOX */
+sub-nav {
+    display:block;
+    width:100%;
+    padding:10px;
+    background-color: gold;
+}
+
+location-box {
+    padding-left:20px;
+}
+
+location-box > a {
+    text-decoration: underline;
+}
+
+location-box > a:last-child {
+    text-decoration: none;
+}
+
+sub-sub-nav > *{
+    padding:8px;
+}
+
+@media only screen and (max-width: 600px) {
+    #top > .logo img {
+        color:red;
+        /* transform: rotate(-90deg); */
+        margin:auto;
+    }
+
+    #logo_rotated {
+        display: block !important;
+        height:95% !important;
+        max-width:10vw !important;
+        margin:auto !important;
+    }
+    #logo_normal {
+        display: none !important;
+    }
+
+    #top > .logo a {
+        width:100%;
+        height:100%;
+        display:block;
+    }
+}
+</style>
+	<link rel='stylesheet' href="/global/style.css">
+	<link rel='stylesheet' href="/global/footer.css">
+</head>
+
+<div id="top">
+    <div class="logo">
+        <a data-nav-id="forside" href="/"><img id="logo_normal" src="/global/images/katholt_logo.svg" alt="Katholt"><img id="logo_rotated" style="display:none" src="/global/images/katholt_logo_rotated.svg" alt="Katholt"></a>
+    </div>
+    <nav>
+        <a data-nav-id="katholt" data-active href="/katholt/"><vertical-center>Om Katholt</vertical-center></a>
+        <a data-nav-id="boernehave" href="/boernehave/"><vertical-center>Børnehave</vertical-center></a>
+        <a data-nav-id="fritidshjem" href="/fritidshjem/"><vertical-center>Fritidshjem</vertical-center></a>
+    </nav>
+    <div id="top_buttons">
+        <a href="#"><custom-button type="button">Log på intra</custom-button></a>
+        <a href="/indmelding/"><custom-button type="button" id="signup_btn">Indmelding</custom-button></a>
+    </div>
+</div>
+<div style="display:none;">
+    <sub-nav class="file-contents-index-hide"><a href='/katholt/besoeg_og_aabningstider'><vertical-center>Besøg og abningstider</vertical-center></a><a href='/katholt/den_styrkede_paedagogiske_laereplan' data-active><vertical-center>Den styrkede pædagogiske læreplan</vertical-center></a><a href='/katholt/foraeldrebestyrelse'><vertical-center>Forældrebestyrelse</vertical-center></a><a href='/katholt/foraeldresamarbejde'><vertical-center>Forældresamarbejde</vertical-center></a><a href='/katholt/hvem_er_vi'><vertical-center>Hvem er vi</vertical-center></a><a href='/katholt/info_fra_Kommunen'><vertical-center>Info fra Kommunen</vertical-center></a><a href='/katholt/kontakt'><vertical-center>Kontakt</vertical-center></a><a href='/katholt/kostpolitik_for_boernehaven_Katholt'><vertical-center>Kostpolitik for børnehaven Katholt</vertical-center></a><a href='/katholt/studerende'><vertical-center>Studerende</vertical-center></a><a href='/katholt/traditioner_i_boernehaven'><vertical-center>Traditioner i børnehaven</vertical-center></a><a href='/katholt/traditioner_i_fritidshjem'><vertical-center>Traditioner i fritidshjem</vertical-center></a><a href='/katholt/veardigrundlag'><vertical-center>Veardigrundlag</vertical-center></a></sub-nav>
+    Debug Sub sub menu:
+    <div style="padding:16px;">
+        <sub-sub-nav class="file-contents-index-hide"><a href='/katholt/den_styrkede_paedagogiske_laereplan/barnets_alsidige_personlighedsudvikling'><vertical-center>Barnets alsidige personlighedsudvikling</vertical-center></a><a href='/katholt/den_styrkede_paedagogiske_laereplan/boernemiljoevurdering' data-active><vertical-center>Børnemiljoevurdering</vertical-center></a><a href='/katholt/den_styrkede_paedagogiske_laereplan/krop_og_bevaegelse'><vertical-center>Krop og bevægelse</vertical-center></a><a href='/katholt/den_styrkede_paedagogiske_laereplan/kulturelle_udtryksformer_og_vaerdier'><vertical-center>Kulturelle udtryksformer og værdier</vertical-center></a><a href='/katholt/den_styrkede_paedagogiske_laereplan/natur_og_naturfaenomener'><vertical-center>Natur og naturfænomener</vertical-center></a><a href='/katholt/den_styrkede_paedagogiske_laereplan/paedagogiske_prioriteringer_og_metoder'><vertical-center>Pædagogiske prioriteringer og metoder</vertical-center></a><a href='/katholt/den_styrkede_paedagogiske_laereplan/sociale_kompetencer'><vertical-center>Sociale kompetencer</vertical-center></a><a href='/katholt/den_styrkede_paedagogiske_laereplan/sprog'><vertical-center>Sprog</vertical-center></a></sub-sub-nav><br>
+    </div>
+    <location-box><a href='/'>Forside</a> / <a href='/katholt/'>Katholt</a> / <a href='/katholt/den_styrkede_paedagogiske_laereplan/'>Den styrkede pædagogiske læreplan</a> / <a href='/katholt/den_styrkede_paedagogiske_laereplan/boernemiljoevurdering/'>Børnemiljoevurdering</a></location-box><br>
+</div>
+<main><div id="content" role="main">
+
+    <!-- vvv INDHOLD START vvv -->
+    <h1>Børnemiljøvurdering</h1>
+    <p><strong><img src="pics/521_legeplads.jpg" alt="legeplads" width="100%"></strong></p>
+    <p>&nbsp;</p>
+    <p><strong>Børnemiljøvurdering i Børnegården Katholt</strong></p>
+    <p>Lov om børnemiljø i dagtilbud trådte i kraft den 1. juli 2006. Ud fra nedenstående vedr. Børnemiljøvurderinger og
+        Børnemiljø, hentet fra dcum.dk, tager vi udgangspunkt i Samtaleskemaet udfyldt af forældrene ud fra barnets
+        besvarelser, Rundgangsskema foretaget af bestyrelsen samt Relationsskemaet som er bearbejdet af personalet, alt
+        til udarbejdelse af Børnemiljøvurderinger - en løbende proces, som er i gang.<br>&nbsp;</p>
+    <p>Alle dagtilbud skal udarbejde en skriftlig børnemiljøvurdering, BMV, mindst hvert tredje år. En
+        børnemiljøvurdering er et redskab, som bruges til at beskrive, vurdere og udvikle børnemiljøet.</p>
+    <p>Børnene skal deltage <br>Børnemiljøet skal vurderes i et børneperspektiv, og i det omfang det er muligt, skal
+        børnenes oplevelse af børnemiljøet inddrages i børnemiljøvurderingen. Det betyder, at man som voksen må forsøge
+        at sætte sig i børnenes sted, og indhente viden direkte fra børnene.</p>
+    <p>&nbsp;<br>Et godt børnemiljø fremmer børns trivsel, udvikling og læring. Børnemiljøet udgøres af det fysiske, det
+        psykiske og det æstetiske miljø. Det er tre synsvinkler, som har mange indbyrdes sammenhænge.<br>&nbsp;</p>
+    <p><strong>En helhedsforståelse</strong><br>Børnemiljøet skabes af den gensidige påvirkning, som finder sted mellem
+        børnene og omgivelserne. Det fysiske, det psykiske og det æstetiske børnemiljø er ofte sammenhængende og har
+        stor indflydelse på hinanden, derfor er det uhensigtsmæssigt at lave for stramme opdelte definitioner.
+        Eksempelvis påvirker et dårligt fysisk børnemiljø både det psykiske og æstetiske miljø. For at sikre at alle
+        synsvinkler bliver tilgodeset i processen, kan det alligevel være rart at knytte nogle vejledende betegnelser
+        til hver af dem.<br>&nbsp;</p>
+    <p><strong>Det fysiske børnemiljø</strong><br>Det fysiske børnemiljø handler om de fysiske rammer indendørs og
+        udendørs og herunder sikkerheds- og sundhedsmæssige forhold. Det drejer sig blandt andet om sundhed, ergonomi,
+        pladsforhold, faciliteter, materialevalg, inventar, indretning, indeklima, hygiejne, udearealer, lysforhold,
+        ventilation og kemiske påvirkninger fra eksempelvis materialer og rengøringsmidler. <br>&nbsp;</p>
+    <p><strong>Det æstetiske børnemiljø</strong><br>Det æstetiske børnemiljø handler om, hvordan omgivelserne påvirker
+        børnene i dagligdagen. Det har betydning for, om børnene oplever dagtilbuddet som et rart sted at være, og om
+        børnene inspireres og får lyst til at udfolde sig. Et motiverende æstetisk miljø giver børnene positive og
+        udfordrende sanseoplevelser.<br>&nbsp;</p>
+    <p><strong>Det psykiske børnemiljø</strong></p>
+    <p>Det psykiske børnemiljø drejer sig om, hvordan børnene trives med hinanden og med de voksne, og det handler om
+        dynamik og sociale kompetencer i børnegruppen. I et godt psykisk børnemiljø bidrager fællesskab, venskaber,
+        tryghed, tillid, omsorg, medbestemmelse, rummelighed og udfordringer til en positiv hverdag.</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <!-- ^^^ INDHOLD SLUT ^^^ -->
+
+    <p>&nbsp;</p>
+</div></main>
+<footer>
+    <div>
+        <flex-column>
+            <a href="/"><img class="footerlogo" src="/global/images/katholt_logo.svg" alt="Katholt logo"></a>
+            <a href="/">Forside</a>
+            <a href="/katholt/">Om Katholt</a>
+            <a href="/boernehave/">Børnehave</a>
+            <a href="/fritidshjem/">Fritidshjem</a>
+            <a href="/indmelding/">Indmelding</a>
+        </flex-column>
+
+        <flex-column class="katholt_footer">
+            <h2>Katholt Børnehave</h2>
+            <p>Børnegården Katholt</p>
+            <p>Adresse: Amagervej 140-142</p>
+            <p>6900 Skjern</p>
+            <p>Telefon: 97 35 17 02</p>
+            <p>Åbningstider: børnehave: </p>
+            <p>mandag-torsdag fra kl. 6.30-16.30</p>
+            <p>fredag 6.30-16.00</p>
+            <p>Åbningstider i fritidshjem: mandag-torsdag fra 6.30 - 7.45 og 12.50 - 16.30</p>
+            <p>Fredag 6.30 - 7.45 og 12.50 - 16.00</p>
+        </flex-column>
+
+        <flex-column class="katholt_footer">
+            <h2>Katholt Fritidshjem</h2>   
+            <p>Børnegården Katholt</p>
+            <p>Adresse: Amagervej 140-142</p>
+            <p>6900 Skjern</p>
+            <p>Åbningstider</p>
+            <p>mandag-torsdag fra kl 6.30-7.45 og 12.50 - 16.30</p>
+            <p>Fredag 6.30 - 7.45 og 12.50 - 16.00</p>
+        </flex-column>
+
+        <flex-column>
+            <h2>Eksterne links for forældre</h2>
+            <a href="https://www.bedoemmelse.dk/" target="_blank">Bedømmelser af institutioner og meget andet</a>
+            <a href="https://www.sjovforborn.dk/" target="_blank">Side med udflugtsideer</a>
+            <a href="https://www.barneguiden.dk/" target="_blank">Børneguiden</a>
+            <a href="https://migimidten.dk/" target="_blank">Mine forældre skal skilles</a>
+            <a href="https://bornsvilkar.dk/" target="_blank">Børns vilkår</a>
+        </flex-column>
+    </div>
+    <div id="education_only">Dette site er kun til undervisningsformål</div>
+</footer>

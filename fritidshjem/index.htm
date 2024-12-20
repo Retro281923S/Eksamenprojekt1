@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="da">
+<head><title>Fritidshjem</title>
+	<style>.file-fritidshjem-index-hide { display:none; }</style>
+	<style>.file-fritidshjem-index-display { display:block; }</style>
+    <meta name="robots" content="noindex">
+    <!-- Meta tags below are generated from VS Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The embed bellow are generated from: https://fonts.google.com/specimen/Sen -->
+    <link rel="icon" href="/global/images/katholt_logo_k_only.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
+
+    <!-- 
+    Denne side er udarbejdet af Mathilde Oppegaard Jensen, 
+                                David Samuel Hjertmann Christiansen &
+                                Ali Moussa
+
+    Kilder:
+    - Til design af strukturen (flexbokse og grids) er følgende kilder brugt:
+    - Flexbokse: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+    - Grids: https://css-tricks.com/snippets/css/complete-guide-grid/
+    - Når der har skulle bruges information om en specifik css attribut eller html tag:
+    - HTML: https://developer.mozilla.org/en-US/docs/Web/HTML
+    - CSS: https://developer.mozilla.org/en-US/docs/Web/CSS
+    - HTML & CSS: https://www.w3schools.com/
+    -->
+
+	<style>
+/*** header.css is included internal in the file to prevent jitter in the nav bar ***/ 
+
+/*******************************************
+* TOP
+********************************************/
+#top {
+    display:flex;
+    width:100%;
+    padding:.5vw;
+    background-color:#84AEFF;
+}
+
+/* LOGO */
+#top > .logo {
+    max-width:20%;
+}
+#top > .logo img {
+    width:20vw;
+    height:5vw;
+}
+#top > .logo, #top_buttons {
+    flex-grow:1;
+}
+
+/* NAVIGATION */
+nav *[data-active], sub-nav *[data-active]{
+    border-bottom: 4px solid rgb(255,200,200);
+    padding-top:    4px solid transparent; /* To ensure text stay in center */
+    color:rgb(255,200,200);
+}
+sub-sub-nav *[data-active] {
+    color:rgb(255,200,200);
+}
+
+nav a {
+    border: 1px solid black;
+    box-shadow: 0 2px 20px -5px rgba(0, 0, 0, .7);
+}
+
+nav, sub-nav {
+    /* for parent flexbox */
+    flex-grow:3;
+
+    /* for child flexboxes */
+    display:flex;
+    justify-content: space-around;
+}
+
+nav > *, sub-nav > * {
+    margin: 4px 2vw 4px 2vw; /* top, right, bottom & left */
+    background-color:gray;
+    width:100%;
+    text-align: center;
+
+    /* Children */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav > *, sub-nav > * {
+    margin: 4px 2vw 4px 2vw; /* top, right, bottom & left */
+    background-color:rgba(0,0,0,.03);
+    width:100%;
+    text-align: center;
+}
+
+nav * {
+    word-break: break-all;
+}
+
+nav a:active, #top_buttons a:active {
+    color:rgb(255,170,170);
+}
+
+/* BUTTONS RIGHT (LOGIN, SIGN UP) */
+#top_buttons custom-button {
+    display:block;
+    background-color: rgba(0,0,0,.03);
+    text-align: center;
+    width:100%;
+    height:45%;
+    margin:1.225%;
+    padding-top:2.5%;
+    pointer-events: none;
+    box-shadow: 0 2px 10px -5px rgba(0, 0, 0, .7);
+    outline: 1px solid black;
+}
+
+/* LOCATION BOX */
+sub-nav {
+    display:block;
+    width:100%;
+    padding:10px;
+    background-color: gold;
+}
+
+location-box {
+    padding-left:20px;
+}
+
+location-box > a {
+    text-decoration: underline;
+}
+
+location-box > a:last-child {
+    text-decoration: none;
+}
+
+sub-sub-nav > *{
+    padding:8px;
+}
+
+@media only screen and (max-width: 600px) {
+    #top > .logo img {
+        color:red;
+        /* transform: rotate(-90deg); */
+        margin:auto;
+    }
+
+    #logo_rotated {
+        display: block !important;
+        height:95% !important;
+        max-width:10vw !important;
+        margin:auto !important;
+    }
+    #logo_normal {
+        display: none !important;
+    }
+
+    #top > .logo a {
+        width:100%;
+        height:100%;
+        display:block;
+    }
+}
+</style>
+	<link rel='stylesheet' href="/global/style.css">
+	<link rel='stylesheet' href="/fritidshjem/style.css">
+	<link rel='stylesheet' href="/global/footer.css">
+</head>
+
+<div id="top">
+    <div class="logo">
+        <a data-nav-id="forside" href="/"><img id="logo_normal" src="/global/images/katholt_logo.svg" alt="Katholt"><img id="logo_rotated" style="display:none" src="/global/images/katholt_logo_rotated.svg" alt="Katholt"></a>
+    </div>
+    <nav>
+        <a data-nav-id="katholt" href="/katholt/"><vertical-center>Om Katholt</vertical-center></a>
+        <a data-nav-id="boernehave" href="/boernehave/"><vertical-center>Børnehave</vertical-center></a>
+        <a data-nav-id="fritidshjem" data-active href="/fritidshjem/"><vertical-center>Fritidshjem</vertical-center></a>
+    </nav>
+    <div id="top_buttons">
+        <a href="#"><custom-button type="button">Log på intra</custom-button></a>
+        <a href="/indmelding/"><custom-button type="button" id="signup_btn">Indmelding</custom-button></a>
+    </div>
+</div>
+<div style="display:none;">
+    <sub-nav class="file-contents-index-hide"></sub-nav>
+    Debug Sub sub menu:
+    <div style="padding:16px;">
+        <sub-sub-nav class="file-contents-index-hide"></sub-sub-nav><br>
+    </div>
+    <location-box><a href='/'>Forside</a> / <a href='/fritidshjem/'>Fritidshjem</a></location-box><br>
+</div>
+<main><banner-header>
+    <h1><span>Fritidshjemmet</span></h1>
+</banner-header>
+
+<main-content-boxes>
+    <main-content-box class="columns" id="food_plan">
+      <data-column id="plan" class="padding">
+        <h2><span>Dagsplan</span></h2>
+        <time-lines>
+            <time-data>Kl. 6:30-7:10</time-data><time-description>Morgenmad</time-description>
+          </time-lines>
+          <time-lines>
+            <time-data>Kl. 7:35</time-data><time-description>Børnene sendes i skole</time-description>
+          </time-lines>
+          <time-lines>
+            <time-data>Kl. 12:50 </time-data><time-description>Børnene kommer fra skole.</time-description>
+          </time-lines>
+        
+        <br><br>
+        <h4>HUSK!</h4>
+        <ul style="padding-top:6px;">
+          <li><b>At tjekke dit barn ind og ud</b> på iPaden, ved ankomst og afhentning.</li>
+          <li>Fritidshjemmets ansvar omfatter <b>IKKE</b> børnenes færden til og fra institutionen. <b>Det påhviler forældrene!</b></li>
+        </ul>
+        <br><br>
+        <small>- Ved indmeldelse skal forældre udfylde en sedel med barnets komme/gå tider til personalet.</small>
+      </data-column>
+      <data-column id="food" class="padding">
+        <h2><span>Aktiviteter i fritidshjemmet</span></h2>
+        <h4>I fritidshjemmet laver vi mange forskellige aktiviteter, bla</h4>
+        <ul class="list-spacing">
+          <li>Ler, træ-, kreativværksted, legorum, barbierum, kælder med puderum, gymnastiksalen, danserum, dyrerum.
+          <li>Mange forskelligespil og bøger.</li>
+          <li>Leg ude og inde (boldspil, bygge huler, bålsted, skoven, åbenværksted m.m.).</li>
+          <li>Salen er til planlagt og spontan aktivitet.</li>
+        </ul>
+        Der lægges vægt på, at børnene får plads og ro til fordybelse. Samtidigt stilles der krav om, at påbegyndte aktiviter færdiggøres. Processen prioriteres frem for produktet, samtidigt med stilles alderssvarende krav om at yde sit bedste.
+      </data-column>
+    </main-content-box>
+  
+    <main-content-box class="columns">
+      <div id="stuff_to_remember">
+        <h2 class="padding" style="padding-bottom:0"><span>Huskeliste</span></h2>
+        <data-column class="padding columns">
+          <data-column class="padding remember_image">
+            
+          </data-column>
+          <data-column class="padding">
+            <ul class="list-spacing">
+              <li>Informer os ved sygdom eller fridage! HUSK at meddele os, hvis jeres barn holder fri/syg gives besked på intra inden kl. 12.00</li>
+              <li>Tjek ind og ud på iPaden! Jeres barn SKAL melde sig selv ind om morgenen, og forældre SKAL melde ud, når barnet bliver hentet. </li>
+              <li>Fritidshjemmets ansvar omfatter IKKE børnenes færden til og fra institutionen. Det påhviler forældrene!</li>
+              <li>Hav skiftetøj ligende i fritidshjemmet! Så er dit barn forberedt.</li>
+              <li>Skriv navn i tøj og andre medbragte ting! Så er det mindre sandsynligt at dit barn mister deres ting.</li>
+            </ul>
+          </data-column>
+        </data-column>
+      </div>
+    </main-content-box>
+  
+    <main-content-box class="columns">
+      <div id="traditions">
+        <h2 class="padding" style="padding-bottom:0"><span>Traditioner i Fritidshjemmet</span></h2>
+        <data-column class="padding columns">
+          <data-column class="padding img_children_left">
+            
+          </data-column>
+          <data-column class="padding">
+            <h4>Vi har i fritidshjemmet en række faste traditioner som vi fejrer hvert år</h4>
+            <div class="padding_children">
+              <p><b>Fastelavn:</b> I tiden op til fastelavn forbereder vi os på festen ved bl.a. ved at lave masker, bage fastelavnsboller m.m. Vi afslutter med en fest med tøndeslagning og børnene må gerne være udklædte.<br></p>
+              <p><b>Halloween:</b> Der bliver det uhyggeligt i fritidshjemmet :)<br></p>
+              <p><b>Kæledyrsdag:</b> I maj/juni arrangeres der en kæledyrsdag. (efter aftale med forældrene)<br></p>
+              <p><b>Høstfest:</b> Sidst i september holder vi høstfest, hvor børnene gennem flere dage laver forberedelser til en frokost. Vi laver æblemost og har besøg af forskellige dyr.<br></p>
+              <p><b>Jul:</b> Vi klipper og klistrer julepynt, laver julegaver og bager julekager. Vi holder julebanko.<br></p>
+              <p><b>Klubben for 3. klasse:</b> Vores årlige 3. kl. klub starter i efteråret, her samler vi alle 3. kl. børn og laver i fællesskab en plan for deres sidste år på fritteren. Vi mødes ca. en gang om måneden og hygger med forskellige aktiviteter.<br></p>
+              <p><b>Hvert år et show:</b> Talent, cirkus, MGP og modeshow er nogle af arrangementer vi har lavet.<br></p>
+              <p><b>Årligt affaldsindsamling:</b> Vi deltager altid i den landdækkende affaldsindsamling.<br></p>
+              <p><b>Bag for en sag:</b> I flere uger op til denne dag, bager vi cupcakes i stor stil. På selve dagen er alle forældre velkommne til at komme og købe kager og boller. Pengene går til børnetelefonen, som er drevet af Børns Vilkår.<br></p>
+            </div>
+          </data-column>
+          <data-column class="padding img_children_right">
+            
+          </data-column>
+        </data-column>
+      </div>
+    </main-content-box>
+  
+    <main-content-box class="columns">
+      <div id="taxes">
+        <h2 id="indskriving_og_takster_fritidshjem"><span>Indskriving og takster for fritidshjemmet</span></h2>
+        <data-column class="padding columns">
+            <data-column class="padding taxes_style">
+                <h3>Prisen for en plads i fritidshjemmet er <b>1779 kr.</b></h3>
+                (her af er de 200 kr. egen betaling uden tilskud)
+                <br><br>
+                <h3>v/30 timer v/ barsel eller forældreorlov <b>1525,00 kr.</b></h3>
+                (her af er de 100 kr egen betaling uden tilskud) skal søges 1 måned før ikrafttrædelse til d. 1. i en måned - skal dokumenteres.
+                <br><br>
+                <h4>Betaling</h4>
+                11 måneder årligt, idet juli måned er betalingsfri.<br>Ved tvivlsspørgsmål til betaling kan der rettes henvendelse til institutionen <a href="tel:+4597351702">97 35 17 02</a>.<br>
+                <br><br>
+                <h4>Økonomisk friplads</h4>
+                Der er mulighed for at søge om nedsættelse af betaling efter gældende regler. Skema for økonomisk friplads kan fås ved henvendelse til Borgerservice.
+                <br><br>
+                <h4>Søskendetilbud</h4>
+                Kommunen giver søskendetilskud til familier med mere end et barn i dagtilbud samt til børn, hvis forældre modtager tilskud til privat børnepasning. Søskendetilskud gælder ikke for fritids- og ungdomsklubber.
+                <br>Du har som forælder mulighed for at søge om nedsættelse af betalingen. Det kaldes økonomisk friplads. Derudover er der også mulighed for at søge om socialpædagogisk friplads.
+                <br>Søskendetilbuddet gælder ikke for fritids-, ungdoms- og SFO-klubber.
+                <br><br>
+                <h4>Indmeldingsblanket & udmeldingsblaket</h4>
+                <a href="/indmelding/">Indmeldelse i fritidshjemmet</a><br>
+                <a href="/indmelding/">Udmeldelse til fritidshjemmet</a>
+            </data-column>
+            <data-column class="padding img_swing">
+                
+            </data-column>
+          </data-column>
+      </div>
+    </main-content-box>
+  </main-content-boxes></main>
+<footer>
+    <div>
+        <flex-column>
+            <a href="/"><img class="footerlogo" src="/global/images/katholt_logo.svg" alt="Katholt logo"></a>
+            <a href="/">Forside</a>
+            <a href="/katholt/">Om Katholt</a>
+            <a href="/boernehave/">Børnehave</a>
+            <a href="/fritidshjem/">Fritidshjem</a>
+            <a href="/indmelding/">Indmelding</a>
+        </flex-column>
+
+        <flex-column class="katholt_footer">
+            <h2>Katholt Børnehave</h2>
+            <p>Børnegården Katholt</p>
+            <p>Adresse: Amagervej 140-142</p>
+            <p>6900 Skjern</p>
+            <p>Telefon: 97 35 17 02</p>
+            <p>Åbningstider: børnehave: </p>
+            <p>mandag-torsdag fra kl. 6.30-16.30</p>
+            <p>fredag 6.30-16.00</p>
+            <p>Åbningstider i fritidshjem: mandag-torsdag fra 6.30 - 7.45 og 12.50 - 16.30</p>
+            <p>Fredag 6.30 - 7.45 og 12.50 - 16.00</p>
+        </flex-column>
+
+        <flex-column class="katholt_footer">
+            <h2>Katholt Fritidshjem</h2>   
+            <p>Børnegården Katholt</p>
+            <p>Adresse: Amagervej 140-142</p>
+            <p>6900 Skjern</p>
+            <p>Åbningstider</p>
+            <p>mandag-torsdag fra kl 6.30-7.45 og 12.50 - 16.30</p>
+            <p>Fredag 6.30 - 7.45 og 12.50 - 16.00</p>
+        </flex-column>
+
+        <flex-column>
+            <h2>Eksterne links for forældre</h2>
+            <a href="https://www.bedoemmelse.dk/" target="_blank">Bedømmelser af institutioner og meget andet</a>
+            <a href="https://www.sjovforborn.dk/" target="_blank">Side med udflugtsideer</a>
+            <a href="https://www.barneguiden.dk/" target="_blank">Børneguiden</a>
+            <a href="https://migimidten.dk/" target="_blank">Mine forældre skal skilles</a>
+            <a href="https://bornsvilkar.dk/" target="_blank">Børns vilkår</a>
+        </flex-column>
+    </div>
+    <div id="education_only">Dette site er kun til undervisningsformål</div>
+</footer>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="da">
+<head><title>Børnehave</title>
+	<style>.file-boernehave-index-hide { display:none; }</style>
+	<style>.file-boernehave-index-display { display:block; }</style>
+    <meta name="robots" content="noindex">
+    <!-- Meta tags below are generated from VS Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The embed bellow are generated from: https://fonts.google.com/specimen/Sen -->
+    <link rel="icon" href="/global/images/katholt_logo_k_only.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
+
+    <!-- 
+    Denne side er udarbejdet af Mathilde Oppegaard Jensen, 
+                                David Samuel Hjertmann Christiansen &
+                                Ali Moussa
+
+    Kilder:
+    - Til design af strukturen (flexbokse og grids) er følgende kilder brugt:
+    - Flexbokse: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+    - Grids: https://css-tricks.com/snippets/css/complete-guide-grid/
+    - Når der har skulle bruges information om en specifik css attribut eller html tag:
+    - HTML: https://developer.mozilla.org/en-US/docs/Web/HTML
+    - CSS: https://developer.mozilla.org/en-US/docs/Web/CSS
+    - HTML & CSS: https://www.w3schools.com/
+    -->
+
+	<style>
+/*** header.css is included internal in the file to prevent jitter in the nav bar ***/ 
+
+/*******************************************
+* TOP
+********************************************/
+#top {
+    display:flex;
+    width:100%;
+    padding:.5vw;
+    background-color:#84AEFF;
+}
+
+/* LOGO */
+#top > .logo {
+    max-width:20%;
+}
+#top > .logo img {
+    width:20vw;
+    height:5vw;
+}
+#top > .logo, #top_buttons {
+    flex-grow:1;
+}
+
+/* NAVIGATION */
+nav *[data-active], sub-nav *[data-active]{
+    border-bottom: 4px solid rgb(255,200,200);
+    padding-top:    4px solid transparent; /* To ensure text stay in center */
+    color:rgb(255,200,200);
+}
+sub-sub-nav *[data-active] {
+    color:rgb(255,200,200);
+}
+
+nav a {
+    border: 1px solid black;
+    box-shadow: 0 2px 20px -5px rgba(0, 0, 0, .7);
+}
+
+nav, sub-nav {
+    /* for parent flexbox */
+    flex-grow:3;
+
+    /* for child flexboxes */
+    display:flex;
+    justify-content: space-around;
+}
+
+nav > *, sub-nav > * {
+    margin: 4px 2vw 4px 2vw; /* top, right, bottom & left */
+    background-color:gray;
+    width:100%;
+    text-align: center;
+
+    /* Children */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav > *, sub-nav > * {
+    margin: 4px 2vw 4px 2vw; /* top, right, bottom & left */
+    background-color:rgba(0,0,0,.03);
+    width:100%;
+    text-align: center;
+}
+
+nav * {
+    word-break: break-all;
+}
+
+nav a:active, #top_buttons a:active {
+    color:rgb(255,170,170);
+}
+
+/* BUTTONS RIGHT (LOGIN, SIGN UP) */
+#top_buttons custom-button {
+    display:block;
+    background-color: rgba(0,0,0,.03);
+    text-align: center;
+    width:100%;
+    height:45%;
+    margin:1.225%;
+    padding-top:2.5%;
+    pointer-events: none;
+    box-shadow: 0 2px 10px -5px rgba(0, 0, 0, .7);
+    outline: 1px solid black;
+}
+
+/* LOCATION BOX */
+sub-nav {
+    display:block;
+    width:100%;
+    padding:10px;
+    background-color: gold;
+}
+
+location-box {
+    padding-left:20px;
+}
+
+location-box > a {
+    text-decoration: underline;
+}
+
+location-box > a:last-child {
+    text-decoration: none;
+}
+
+sub-sub-nav > *{
+    padding:8px;
+}
+
+@media only screen and (max-width: 600px) {
+    #top > .logo img {
+        color:red;
+        /* transform: rotate(-90deg); */
+        margin:auto;
+    }
+
+    #logo_rotated {
+        display: block !important;
+        height:95% !important;
+        max-width:10vw !important;
+        margin:auto !important;
+    }
+    #logo_normal {
+        display: none !important;
+    }
+
+    #top > .logo a {
+        width:100%;
+        height:100%;
+        display:block;
+    }
+}
+</style>
+	<link rel='stylesheet' href="/global/style.css">
+	<link rel='stylesheet' href="/boernehave/style.css">
+	<link rel='stylesheet' href="/global/footer.css">
+</head>
+
+<div id="top">
+    <div class="logo">
+        <a data-nav-id="forside" href="/"><img id="logo_normal" src="/global/images/katholt_logo.svg" alt="Katholt"><img id="logo_rotated" style="display:none" src="/global/images/katholt_logo_rotated.svg" alt="Katholt"></a>
+    </div>
+    <nav>
+        <a data-nav-id="katholt" href="/katholt/"><vertical-center>Om Katholt</vertical-center></a>
+        <a data-nav-id="boernehave" data-active href="/boernehave/"><vertical-center>Børnehave</vertical-center></a>
+        <a data-nav-id="fritidshjem" href="/fritidshjem/"><vertical-center>Fritidshjem</vertical-center></a>
+    </nav>
+    <div id="top_buttons">
+        <a href="#"><custom-button type="button">Log på intra</custom-button></a>
+        <a href="/indmelding/"><custom-button type="button" id="signup_btn">Indmelding</custom-button></a>
+    </div>
+</div>
+<div style="display:none;">
+    <sub-nav class="file-contents-index-hide"><a href='/boernehave/madpakker'><vertical-center>Madpakker</vertical-center></a></sub-nav>
+    Debug Sub sub menu:
+    <div style="padding:16px;">
+        <sub-sub-nav class="file-contents-index-hide"></sub-sub-nav><br>
+    </div>
+    <location-box><a href='/'>Forside</a> / <a href='/boernehave/'>Børnehave</a></location-box><br>
+</div>
+<main><banner-header>
+  <h1><span>Børnehaven</span></h1>
+</banner-header>
+
+<main-content-boxes>
+  <main-content-box class="columns" id="food_plan">
+    <data-column id="plan" class="padding">
+      <h2><span>Dagsplan</span></h2>
+      <time-lines>
+        <time-data>Kl. 6.30 - 7.10</time-data><time-description>Godmorgen - fælles morgenmad - der tilbydes cornflakes, havregryn, havregrød og A38.</time-description>
+      </time-lines>
+      <time-lines>
+        <time-data>Kl. 7.30</time-data><time-description>Leg på tværs af grupperne. Når de voksne møder ind, fordeler de sig i huset.</time-description>
+      </time-lines>
+      <time-lines>
+        <time-data>Kl. 8.00 - 9.00 </time-data><time-description>Leg i gymnastiksalen sammen med en voksen for de børn, der har lyst.</time-description>
+      </time-lines>
+      <time-lines>
+        <time-data>Kl. 9.00-11.30</time-data><time-description>Vi går ud i grupper, hvor vi starter med vores medbragte frugt. Forskellige aktiviteter - nogle planlagte - kammeratskabsgrupper på tværs. Samling/rundkreds med sang - højtlæsning - rim og remser. Og forskellige andre lege.</time-description>
+      </time-lines>
+      <time-lines>
+        <time-data>Kl. 11.30</time-data><time-description>Der spises frokost. Børnehaven giver mælk dertil. Derefter går alle ud for at lege i den friske luft. Resten af eftermiddagen leger vi på tværs af grupperne. Børn, der har brug for middagslur bliver puttet.</time-description>
+      </time-lines>
+      <time-lines>
+        <time-data>Kl. 14.00</time-data><time-description>Vi spiser brød på legepladsen.</time-description>
+      </time-lines>
+      <time-lines>
+        <time-data>Kl. 16.30</time-data><time-description>Børnehaven lukker - fredag lukker vi kl. 16.00.</time-description>
+      </time-lines>
+    </data-column>
+    <data-column id="food" class="padding">
+      <h2><span>Mad i børnehaven</span></h2>
+      <h4>Hos Børnehaven Katholt går vi meget op i at lære børnene om sund kost, og være bevidste om hvorfor det er godt at spise sundt.</h4>
+      <br>
+      <b>Morgenmad (6:30-7:30)</b>
+      I børnehaven serverer vi sund og nærrig morgenmad for bøenene, her kan de vælge imellem cornflakes, havregryn, havregrød og A38.
+      <br><br>
+      <b>Formiddag (9:15)</b>
+      Der serveres frugt til børnene. Vand serveres. Børnene er med til at fordele furgten mellem de forskellige grupper.
+      <br><br>
+      <b>Frokost (11:15)</b>
+      Til frokost skal børnene selv have madpakke med, dog serverer vi mælk og 
+      <br><br>
+      <b>Eftermiddag (14:00)</b>
+      Til eftermiddag får alle børnene serveret vand og boller.
+      <br><br><br>
+      Der lægges vægt på, at børnene får plads og ro til fordybelse. Samtidigt stilles der krav om, at påbegyndte aktiviter færdiggøres. Processen prioriteres frem for produktet, samtidigt med stilles alderssvarende krav om at yde sit bedste.
+    </data-column>
+  </main-content-box>
+
+  <main-content-box class="columns">
+    <div id="stuff_to_remember">
+      <h2 class="padding" style="padding-bottom:0"><span>Huskeliste</span></h2>
+      <data-column class="padding columns">
+        <data-column class="padding remember_image">
+          
+        </data-column>
+        <data-column class="padding">
+          <ul class="list-spacing">
+            <li><b>Skriv navn på dit barns tøj og legetøj!</b> Da vi er mange børn i børnehaven, er det vigtigt, at børnenes tøj og ting er tydeligt mærket med navn, da det ellers kan være svært for os at hitte rede i tingene.</li>
+            <li><b>Husk praktisk påklædning!</b> Det er vigtigt, at børnene er godt klædt på, alt efter vejrforholdene, ligesom de hver dag skal medbringe skiftetøj, regntøj og gummistøvler. Både vores legeplads, skoven og naturen omkring børnehaven bruges flittigt - derfor</li>
+            <li><b>Rigeligt med skiftetøj!</b> - og vi vil pointere at det ikke er nødvendigt at vaske overtøj flere gange ugentligt - blot det er tørt.</li>
+            <li><b>Informer os ved sygdom eller fridage!</b> Det er vigtigt at børnene ikke kommer i børnehave når de er syge, så hold dem hjemme og informer os på tlf. <a href="tel:+4597351702">97 35 17 02</a></li>
+            <li><b>Husk at meld ankomst og afhentning til personalet!</b> Det er rigtig vigtigt at vi ved hvilke børn vi har til stede i instutitionen</li>
+          </ul>
+        </data-column>
+      </data-column>
+    </div>
+  </main-content-box>
+
+  <main-content-box class="columns">
+    <div id="traditions">
+      <h2 class="padding" style="padding-bottom:0"><span>Traditioner i Børnehaven</span></h2>
+      <data-column class="padding columns">
+        <data-column class="padding img_children_left">
+          
+        </data-column>
+        <data-column class="padding">
+          <h4>Vi har nogle faste traditioner i løbet af året i børnehaven.</h4>
+          <div class="padding_children">
+            <p><b>Fastelavn:</b> Det er en fast tradition, at vi hvert år fejrer fastelavn sammen med børnene.<br></p>
+            <p><b>Påske:</b> Vi laver påskepynt osv. op til påske.<br></p>
+            <p><b>Fotografering:</b> Fotografen kommer hvert år og fotograferer børnene.<br></p>
+            <p><b>De store børn:</b> Det sidste år i børnehaven er de store børn samlet 2 formiddage ugentligt, hvor der tilknyttes faste voksne.<br></p>
+            <p><b>Fødselsdag:</b> Børnenes fødselsdage fejres på forskellig vis. Nogle vælger at holde den i børnehaven, andre inviterer barnets gruppe med hjem. Dette aftales forud med personalet. Vi ønsker sunde fødselsdage, hvilket betyder, at der tænkes alternativt i stedet for slik! Hvis der serveres slik, vil vi appellere til, at det kun er kagemanden, der er pyntet! Ingen sodavand!<br></p>
+            <p><b>Bedsteforældredag:</b>  En gang i foråret inviterer børnene deres bedsteforældre til bedsteforældredag. Har barnet ikke mulighed for at få besøg af bedsteforældre må det gerne få besøg af andre, der står barnet nær, da det er vigtigt, at alle får besøg.<br></p>
+            <p><b>Jul:</b> Vi klipper og klistrer julepynt og bager julekager. Vi har som fast tradition, at vi kort tid før jul går til julegudstjeneste Når vi kommer hjem fra kirke, spiser vi risengrød. Lige før jul holder vi juleafslutning, hvor vi hygger os og leger julelege og får besøg af julemanden. Omkring 1. december har vi en julehygge eftermiddag for hele familien, hvor de store børn i børnehaven går lucia.<br></p>
+            <p>Vi har også en række aktiviteter planlagt. Disse kan ses på årsplanen.<br></p>
+            <p><b>Der kan findes skema over de planlagte aktiviteter og traditioner samt datoer her: Årsplan 2024 </b><br></p>
+          </div>
+        </data-column>
+        <data-column class="padding img_children_right">
+          
+        </data-column>
+      </data-column>
+    </div>
+  </main-content-box>
+
+  <main-content-box class="columns">
+    <div id="taxes">
+      <h2 id="indskriving_og_takster_boernehave"><span>Indskriving og takster for børnehaven</span></h2>
+      <data-column class="padding columns">
+        <data-column class="padding taxes_style">
+          <h3>v/ fuldtidspladt i børnehaven er prisen <b>2437,00 kr.</b></h3>
+          (her af er de 200 kr. egen betaling uden tilskud)
+          <br><br>
+          <h3>v/30 timer v/ barsel eller forældreorlov <b>1525,00 kr.</b></h3>
+          (her af er de 100 kr egen betaling uden tilskud) skal søges 1 måned før ikrafttrædelse til d. 1. i en måned - skal dokumenteres.
+          <br><br>
+          <h4>Betaling</h4>
+          11 måneder årligt, idet juli måned er betalingsfri.<br>Ved tvivlsspørgsmål til betaling kan der rettes henvendelse til institutionen <a href="tel:+4597351702">97 35 17 02</a>.<br>
+          <br><br>
+          <h4>Økonomisk friplads</h4>
+          Der er mulighed for at søge om nedsættelse af betaling efter gældende regler. Skema for økonomisk friplads kan fås ved henvendelse til Borgerservice.
+          <br><br>
+          <h4>Søskendetilbud</h4>
+          Kommunen giver søskendetilskud til familier med mere end et barn i dagtilbud samt til børn, hvis forældre modtager tilskud til privat børnepasning. Søskendetilskud gælder ikke for fritids- og ungdomsklubber.
+          <br>Du har som forælder mulighed for at søge om nedsættelse af betalingen. Det kaldes økonomisk friplads. Derudover er der også mulighed for at søge om socialpædagogisk friplads.
+          <br>Søskendetilbuddet gælder ikke for fritids-, ungdoms- og SFO-klubber.
+          <br><br>
+          <h4>Indmeldingsblanket & udmeldingsblaket</h4>
+          <a href="/indmelding/">Indmeldelse i børnehaven</a><br>
+          <a href="/indmelding/">Udmeldelse til børnehaven</a>
+        </data-column>
+        <data-column class="padding img_swing">
+          
+        </data-column>
+      </data-column>
+    </div>
+  </main-content-box>
+</main-content-boxes></main>
+<footer>
+    <div>
+        <flex-column>
+            <a href="/"><img class="footerlogo" src="/global/images/katholt_logo.svg" alt="Katholt logo"></a>
+            <a href="/">Forside</a>
+            <a href="/katholt/">Om Katholt</a>
+            <a href="/boernehave/">Børnehave</a>
+            <a href="/fritidshjem/">Fritidshjem</a>
+            <a href="/indmelding/">Indmelding</a>
+        </flex-column>
+
+        <flex-column class="katholt_footer">
+            <h2>Katholt Børnehave</h2>
+            <p>Børnegården Katholt</p>
+            <p>Adresse: Amagervej 140-142</p>
+            <p>6900 Skjern</p>
+            <p>Telefon: 97 35 17 02</p>
+            <p>Åbningstider: børnehave: </p>
+            <p>mandag-torsdag fra kl. 6.30-16.30</p>
+            <p>fredag 6.30-16.00</p>
+            <p>Åbningstider i fritidshjem: mandag-torsdag fra 6.30 - 7.45 og 12.50 - 16.30</p>
+            <p>Fredag 6.30 - 7.45 og 12.50 - 16.00</p>
+        </flex-column>
+
+        <flex-column class="katholt_footer">
+            <h2>Katholt Fritidshjem</h2>   
+            <p>Børnegården Katholt</p>
+            <p>Adresse: Amagervej 140-142</p>
+            <p>6900 Skjern</p>
+            <p>Åbningstider</p>
+            <p>mandag-torsdag fra kl 6.30-7.45 og 12.50 - 16.30</p>
+            <p>Fredag 6.30 - 7.45 og 12.50 - 16.00</p>
+        </flex-column>
+
+        <flex-column>
+            <h2>Eksterne links for forældre</h2>
+            <a href="https://www.bedoemmelse.dk/" target="_blank">Bedømmelser af institutioner og meget andet</a>
+            <a href="https://www.sjovforborn.dk/" target="_blank">Side med udflugtsideer</a>
+            <a href="https://www.barneguiden.dk/" target="_blank">Børneguiden</a>
+            <a href="https://migimidten.dk/" target="_blank">Mine forældre skal skilles</a>
+            <a href="https://bornsvilkar.dk/" target="_blank">Børns vilkår</a>
+        </flex-column>
+    </div>
+    <div id="education_only">Dette site er kun til undervisningsformål</div>
+</footer>
